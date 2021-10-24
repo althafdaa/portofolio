@@ -4,7 +4,6 @@ First personal project that i used make with public API (github API)
 
 ### Screenshot
 
-DESKTOP VIEW
 ![](./screenshot.png)
 
 ### Links
