@@ -26,25 +26,34 @@ searchInput.addEventListener(`keyup`, (e) => {
   }
 });
 
+// modeText and icon definition
+const modeText = document.querySelector(`.mode`);
+const ico = document.querySelector(`#ico`);
+
+// check localstorage
+const currentTheme = localStorage.getItem(`theme`);
+if (currentTheme === `light`) {
+  document.body.querySelector(`input[type="checkbox"]`).checked = true;
+  document.body.classList.add(`dark-theme`);
+  modeText.innerHTML = `Light Mode`;
+  ico.className = `bi bi-sun-fill`;
+}
+
 // switching dark-light theme
 
 const switcher = document.querySelector(`.theme-switch`);
-
-// switcher.onclick = function () {
-
-// };
 
 switcher.addEventListener(`change`, iconChange);
 
 function iconChange(e) {
   document.body.classList.toggle("dark-theme");
-  const modeText = document.querySelector(`.mode`);
-  const ico = document.querySelector(`#ico`);
   if (e.target.checked === true) {
     modeText.innerHTML = `Light Mode`;
     ico.className = `bi bi-sun-fill`;
+    localStorage.setItem(`theme`, `light`);
   } else {
     modeText.innerHTML = `Dark Mode`;
     ico.className = `bi bi-moon`;
+    localStorage.clear();
   }
 }
