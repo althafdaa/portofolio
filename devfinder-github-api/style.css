@@ -1,3 +1,15 @@
+:root {
+  --primary-color: rgb(20, 28, 47);
+  --secondary-color: rgba(31, 42, 72, 1);
+  --text-color: white;
+}
+
+.dark-theme {
+  --primary-color: white;
+  --secondary-color: rgb(214, 214, 214);
+  --text-color: black;
+}
+
 body {
   height: 100vh;
   overflow: auto;
@@ -7,28 +19,61 @@ body {
 }
 
 .main-bg {
-  background: rgb(20, 28, 47);
+  /* gelap */
+  background: var(--primary-color);
 }
 
 .cardbg {
-  background: rgba(31, 42, 72, 1);
+  /* terang */
+  background: var(--secondary-color);
   border-color: none;
 }
 
 .bi-github {
   font-size: 150px;
 }
+
+.form-control,
 .form-control:active,
 .form-control:focus,
 .form-control:focus:active {
-  background-color: rgba(31, 42, 72, 1) !important;
-  color: white;
+  background-color: var(--secondary-color) !important;
+  color: var(--text-color);
 }
 
 .input-group-text {
   background: none;
 }
 
+li {
+  color: var(--text-color) !important;
+}
+
 a {
   text-decoration: none;
+}
+
+.navbar-brand {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+footer {
+  color: var(--text-color);
+}
+
+.mode {
+  color: var(--text-color);
+}
+
+.bi-github {
+  color: var(--text-color);
+}
+
+.bi-moon {
+  color: var(--text-color);
+}
+
+.bi-search {
+  color: var(--text-color);
 }

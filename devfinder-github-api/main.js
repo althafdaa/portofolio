@@ -25,3 +25,26 @@ searchInput.addEventListener(`keyup`, (e) => {
     ui.clearFields();
   }
 });
+
+// switching dark-light theme
+
+const switcher = document.querySelector(`.theme-switch`);
+
+// switcher.onclick = function () {
+
+// };
+
+switcher.addEventListener(`change`, iconChange);
+
+function iconChange(e) {
+  document.body.classList.toggle("dark-theme");
+  const modeText = document.querySelector(`.mode`);
+  const ico = document.querySelector(`#ico`);
+  if (e.target.checked === true) {
+    modeText.innerHTML = `Light Mode`;
+    ico.className = `bi bi-sun-fill`;
+  } else {
+    modeText.innerHTML = `Dark Mode`;
+    ico.className = `bi bi-moon`;
+  }
+}
