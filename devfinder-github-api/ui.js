@@ -3,7 +3,6 @@ class UI {
     //   tempat taro profile
     this.profile = document.getElementById(`output`);
   }
-
   showProfile(user) {
     this.profile.innerHTML = `
         <div class="cardbg card card-body mb-3 border-1 border-white">
@@ -39,23 +38,26 @@ class UI {
     let output = ``;
     repos.forEach((repo) => {
       output += `
-    <div class="card card-body mb-2">
-      <div class="row">
-        <div class="col-md-6">
-       <a href="${repo.html_url}" target"_blank" class="fw-bold"> ${repo.name}</a>
+        <div class="card card-body mb-2">
+          <div class="row">
+            <div class="col-md-6">
+            <a href="${repo.html_url}" target"_blank" class="fw-bold"> ${repo.name}</a>
+            </div>
+            <div class="col-md-6">
+            <span class="badge bg-primary">Stars: ${repo.stargazers_count}</span>
+            <span class="badge bg-secondary">Watchers: ${repo.watchers_count}</span>
+            <span class="badge bg-success">Forks: ${repo.forks_count}</span>
+            </div>
+          </div>
         </div>
-        <div class="col-md-6">
-        <span class="badge bg-primary">Stars: ${repo.stargazers_count}</span>
-        <span class="badge bg-secondary">Watchers: ${repo.watchers_count}</span>
-        <span class="badge bg-success">Forks: ${repo.forks_count}</span>
-        </div>
-      </div>
-    </div>
-    `;
+        `;
     });
-    // yang sudah di loop dikeluarin ke display
+
+    // yang sudah di loop di keluarin ke display yg udah disediain di HTML
+    // isinya let output yang baru selesai di loop
     document.querySelector(`.repos`).innerHTML = output;
   }
+
   showAlert(msg, className) {
     //   only show 1 alert, if theres more remove
     this.clearAlert();
@@ -72,6 +74,7 @@ class UI {
     container.insertBefore(div, search);
     //     timeout
     setTimeout(() => {
+      // cari yang ada kelas alert, hapus dalam 1.5detik
       document.querySelector(`.alert`).remove();
     }, 1500);
   }
