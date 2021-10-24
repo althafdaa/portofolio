@@ -1,0 +1,28 @@
+body {
+  height: 100vh;
+  overflow: auto;
+}
+
+.main-bg {
+  background: rgb(20, 28, 47);
+}
+
+.cardbg {
+  background: rgba(31, 42, 72, 1);
+  border-color: none;
+}
+
+.form-control:active,
+.form-control:focus,
+.form-control:focus:active {
+  background-color: rgba(31, 42, 72, 1) !important;
+  color: white;
+}
+
+.input-group-text {
+  background: none;
+}
+
+a {
+  text-decoration: none;
+}
