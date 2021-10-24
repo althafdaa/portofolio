@@ -3,6 +3,9 @@ body {
   overflow: auto;
 }
 
+.container {
+}
+
 .main-bg {
   background: rgb(20, 28, 47);
 }
@@ -12,6 +15,9 @@ body {
   border-color: none;
 }
 
+.bi-github {
+  font-size: 150px;
+}
 .form-control:active,
 .form-control:focus,
 .form-control:focus:active {

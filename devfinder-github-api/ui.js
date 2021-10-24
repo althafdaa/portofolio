@@ -6,7 +6,7 @@ class UI {
 
   showProfile(user) {
     this.profile.innerHTML = `
-        <div class="cardbg card card-body mb-3">
+        <div class="cardbg card card-body mb-3 border-1 border-white">
             <div class="row">
                   <div class="col-md-3 ">
                         <img class="img-fluid rounded-circle mb-3" src="${user.avatar_url}">
@@ -18,7 +18,7 @@ class UI {
                   <span class="badge bg-success">Followers: ${user.followers}</span>
                   <span class="badge bg-info">Public Repos: ${user.following}</span>
                  <br><br>
-                 <ul class="list-group text-center fs-5">
+                 <ul class="list-group text-center">
                         <li class="cardbg text-white list-group-item border-0">Company<br> ${user.company}</li>
                         <li class="cardbg text-white list-group-item border-0">Website/Blog<br> ${user.blog}</li>
                         <li class="cardbg text-white list-group-item border-0">Location<br> ${user.location}</li>
@@ -42,7 +42,7 @@ class UI {
     <div class="card card-body mb-2">
       <div class="row">
         <div class="col-md-6">
-       <a href="${repo.html_url}" target"_blank"> ${repo.name}</a>
+       <a href="${repo.html_url}" target"_blank" class="fw-bold"> ${repo.name}</a>
         </div>
         <div class="col-md-6">
         <span class="badge bg-primary">Stars: ${repo.stargazers_count}</span>
